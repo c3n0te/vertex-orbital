@@ -7,5 +7,4 @@ opportunities back into the database.
 # Install
 pip3 install "psycopg[binary]"
 <br>
-<br>
 pip3 install -r requirements.txt
