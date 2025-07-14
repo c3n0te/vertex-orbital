@@ -250,7 +250,14 @@ def main() -> None:
 
     logger.addHandler(logging.StreamHandler())
     logger.info("Parsing Environment Variables")
-    period = int(os.getenv("PERIOD"))
+    period = os.getenv("PERIOD")
+    
+    if type(period) == str:
+        period = int(period)
+    else:
+        print("Failed to parse PERIOD env var")
+        return
+
     db_url = os.getenv("DB_URL")
 
     while True:
